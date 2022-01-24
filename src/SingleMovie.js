@@ -32,7 +32,7 @@ const SingleMovie = () => {
   } = movie;
   const isEnd = /\.$/.test(plot);
   const search = title.replace(/\s/g, '+');
-  const link = `https://www.imdb.com/find?q=Searching+${search}`;
+  const link = `https://www.imdb.com/find?q=${search}`;
   console.log(movie);
 
   return (

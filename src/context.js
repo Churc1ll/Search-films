@@ -1,11 +1,10 @@
 import React, { useState, useContext } from 'react';
-// make sure to use https
 import useFetch from './useFetch';
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [query, setQuery] = useState('searching');
+  const [query, setQuery] = useState('search');
   const { error, data: movies, loading } = useFetch(`&s=${query}`);
 
   return (
@@ -14,7 +13,6 @@ const AppProvider = ({ children }) => {
     </AppContext.Provider>
   );
 };
-// make sure use
 export const useGlobalContext = () => {
   return useContext(AppContext);
 };
